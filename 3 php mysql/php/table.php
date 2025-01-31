@@ -3,7 +3,7 @@
     echo '<p> welcome</p>';
 
     //lets create a table
-    $query = 'CREATE TABLE Tracks (
+    $sqlquery = 'CREATE TABLE Tracks (
         id int NOT NULL PRIMARY KEY,
         `name` nchar(250) NOT NULL,
         `length` time,
@@ -15,7 +15,7 @@
 
     //try to do it
     try {
-        $pdo->exec($query);
+        $pdo->exec($sqlquery);
         $output = 'Great! the table Tracks was created succesfully!';
     }
     catch(PDOException $e) {
