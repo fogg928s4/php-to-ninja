@@ -15,7 +15,7 @@
         $myPass = $_POST['myPassword'];
 
         try{
-            $pdo =  new PDO('mysql:host='.$myHost.';dbname=ibdb;charset=utf8md4', $myUser, $myPass);
+            $pdo =  new PDO('mysql:host='.$myHost.';dbname=ibdb;charset=utf8mb4', $myUser, $myPass);
             $output = 'Connection established successfully B)';
         }
         catch(PDOException $e){

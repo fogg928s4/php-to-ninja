@@ -19,7 +19,7 @@
         $myHost = $_POST['myHost'];
         $myPass = $_POST['myPassword'];
 
-        $pdo = new PDO('mysql:host=mysql;dbname=ibdd;charset=utf8md4',$myUser, $myPassword);
+        $pdo =  new PDO('mysql:host='.$myHost.';dbname=ibdb;charset=utf8mb4', $myUser, $myPass);
         //sql query for select
 
         $sql = 'SELECT `name` FROM `Artists`';
@@ -31,13 +31,17 @@
         //if no more rows, fetch returns false
         while($row = $result->fetch()) {
             //process the row
-            $artists[] = $row['names']; //to access each artis we just have to access the array
+            $artists[] = $row['name']; //to access each artis we just have to access the array
         }
         
         $i = 1; //counter
         //display values
         foreach ($artists as $a) {
-            echo '<tr> <td>'.$i.'</td> <td>'.$a.'</td></tr>';
+            echo '<tr>
+            <td>'.$i.'</td> 
+            <td>'.$a.'</td>
+            </tr>';
+            $i++;
         }
         
     }
